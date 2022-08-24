@@ -25,3 +25,24 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+## Gerando e Servindo um Projeto Angular usando Angular-CLI
+
+Isso deve criar uma nova pasta chamada conFusion dentro de sua pasta Angular e criar o aplicativo Angular nessa pasta.
+
+ng new ConFusion
+
+Isso compilará o projeto e abrirá uma guia em seu navegador padrão no endereço http://localhost:4200 .
+
+ng serve --open
+
+## Visão geral da arquitetura de aplicativos com Angular
+
+Os aplicativos em angular são construídos como uma combinaçãode HTML e TypeScript ou JavaScript.
+Usaremos o TypeScript como a linguagem de escolha para construir nosso aplicativo Angular.O próprio Angular consiste em várias bibliotecas,algumas delas chamadas bibliotecas e outras são bibliotecas opcionais.Dependendo do tipo de aplicativo Angular que você está tentando construir,você incluirá alguns deles em seu aplicativo.Como já aprendemos, Angular é um framework JavaScript e vamos aproveitar isso para construir nosso aplicativo.
+
+Para resumir a aplicação Angular é modular em sua natureza e consistirá em vários componentes, juntamente com seus templates, que compóem a aplicação. Os componentes , e outras partes do aplicativo Angular, como  os serviços , serão organizados  em módulos. Esses Módulos por sua vez serão utilizados por módulos de nível superior.
+
+Então um aplicativo Angular pode ser visto como tendo uma arquitetura modular, com um módulo raiz no topo, que conta com a ajuda de outros módulos organizados em sua hierrquia de modelagem. 
+O módulo raiz padrão do angular é chamado de app.module
