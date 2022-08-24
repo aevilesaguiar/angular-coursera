@@ -52,3 +52,38 @@ Então um aplicativo Angular pode ser visto como tendo uma arquitetura modular, 
 O módulo raiz padrão do angular é chamado de app.module.
 
 
+## Angular material instalação CLI
+
+ng add @angular/material
+
+## Flex layout
+
+Getting Started
+Start by installing the Angular Layout library from npm
+
+npm i -s @angular/flex-layout @angular/cdk
+
+Next, you'll need to import the Layout module in your app's module.
+
+app.module.ts
+
+import { FlexLayoutModule } from '@angular/flex-layout';
+...
+
+@NgModule({
+    ...
+    imports: [ FlexLayoutModule ],
+    ...
+});
+After that is configured, you can use the Angular Layout attributes in your HTML tags for flex layout:
+
+<div fxLayout="row" fxLayoutAlign="space-between">
+</div>
+Check out all of the available options for using Angular Layout in your application.
+
+## Instalando hammer js
+
+npm install --save angular-hammer
+## Referencias
+
+- https://github.com/angular/flex-layout
