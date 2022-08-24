@@ -84,6 +84,28 @@ Check out all of the available options for using Angular Layout in your applicat
 ## Instalando hammer js
 
 npm install --save angular-hammer
+
+
+## Inversão de controle
+
+Na engenharia de software , a inversão de controle ( IoC ) é um princípio de programação. IoC inverte o fluxo de controle em comparação com o fluxo de controle tradicional. Em IoC, partes personalizadas de um programa de computador recebem o fluxo de controle de uma estrutura genérica . Uma arquitetura de software com esse design inverte o controle em relação à programação procedural tradicional : na programação tradicional, o código personalizado que expressa o objetivo do programa chamaem bibliotecas reutilizáveis ​​para cuidar de tarefas genéricas, mas com a inversão de controle, é a estrutura que chama o código personalizado ou específico da tarefa.
+A inversão de controle é usada para aumentar a modularidade do programa e torná-lo extensível , [1] e tem aplicações em programação orientada a objetos e outros paradigmas de programação . 
+
+
 ## Referencias
 
 - https://github.com/angular/flex-layout
+- https://angular.io/
+- https://angular.io/cli
+- https://material.angular.io/
+- https://material.angular.io/components/toolbar/overview
+- https://github.com/angular/flex-layout
+- https://github.com/angular/flex-layout/wiki/API-Documentation
+- https://www.netguru.com/blog/imperative-vs-declarative
+- https://hackernoon.com/5-best-javascript-frameworks-in-2017-7a63b3870282#.tt1k09l1d
+- http://codenugget.co/2015/03/05/declarative-vs-imperative-programming-web.html
+
+
+
+
+
