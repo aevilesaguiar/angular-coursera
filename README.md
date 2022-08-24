@@ -44,5 +44,11 @@ Usaremos o TypeScript como a linguagem de escolha para construir nosso aplicativ
 
 Para resumir a aplicação Angular é modular em sua natureza e consistirá em vários componentes, juntamente com seus templates, que compóem a aplicação. Os componentes , e outras partes do aplicativo Angular, como  os serviços , serão organizados  em módulos. Esses Módulos por sua vez serão utilizados por módulos de nível superior.
 
-Então um aplicativo Angular pode ser visto como tendo uma arquitetura modular, com um módulo raiz no topo, que conta com a ajuda de outros módulos organizados em sua hierrquia de modelagem. 
-O módulo raiz padrão do angular é chamado de app.module
+Então um aplicativo Angular pode ser visto como tendo uma arquitetura modular, com um módulo raiz no topo, que conta com a ajuda de outros módulos organizados em sua hierrquia de modulos. 
+
+![image](https://user-images.githubusercontent.com/52088444/186511694-9186f51c-c6d1-4ec4-b367-f7507137642f.png)
+
+
+O módulo raiz padrão do angular é chamado de app.module.
+
+
