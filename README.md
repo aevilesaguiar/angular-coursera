@@ -91,6 +91,12 @@ npm install --save angular-hammer
 Na engenharia de software , a inversão de controle ( IoC ) é um princípio de programação. IoC inverte o fluxo de controle em comparação com o fluxo de controle tradicional. Em IoC, partes personalizadas de um programa de computador recebem o fluxo de controle de uma estrutura genérica . Uma arquitetura de software com esse design inverte o controle em relação à programação procedural tradicional : na programação tradicional, o código personalizado que expressa o objetivo do programa chamaem bibliotecas reutilizáveis ​​para cuidar de tarefas genéricas, mas com a inversão de controle, é a estrutura que chama o código personalizado ou específico da tarefa.
 A inversão de controle é usada para aumentar a modularidade do programa e torná-lo extensível , [1] e tem aplicações em programação orientada a objetos e outros paradigmas de programação . 
 
+## Componentes angulares
+
+Um componente é uma "versão" simplificada de uma diretiva, que basicamente são marcadores ou extensões de elementos que compõem o DOM, estes marcadores informam ao AngularJS para inserir alguma funcionalidade específica a esse elemento.
+
+Uma das principais vantagens do uso de componentes é criar trechos de códigos reaproveitáveis de maneira trivial, o que substitui a criação de diretivas com configurações mais complexas.
+
 
 ## Referencias
 
