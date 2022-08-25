@@ -99,6 +99,196 @@ Uma das principais vantagens do uso de componentes é criar trechos de códigos 
 
 ![image](https://user-images.githubusercontent.com/52088444/186658826-e1395cfe-9adb-4108-b385-a1d883bad2a7.png)
 
+O componente é definido especificando o código e também especificando o modelo correspondente.
+
+Então, dentro do código você pode definir propriedades e métodos que estará acessível a partir do seu modelo.
+
+Nos metadados, no decorator de componentes,você especificou o nome do arquivo de modelo como uma das propriedades para sua classe de componente. Da mesma forma, quaisquer propriedades e métodos que você definir em seu componente estará acessível a partir de seu modelo.
+
+Não é apenas isso , você também pode ter um Event Binding  do seu modelo de volta aos seus componentes.Portanto, se algum evento for gerado em seus modelos, por exemplo clicar em um botão em seu modelo que pode acionar chamadas para métodos dentro do seu código e também um property binding É um método de ligação unidirecional, pois os valores vão do componente para a camada do modelo e as alterações feitas no componente atualizam as propriedades vinculadas no modelo
+
+Os componentes em um aplicativo Angular podem ser organizados em uma hierarquia. Portanto, você sempre terá um componente raiz. Então, para nossa aplicação,o arquivo app.component.ts e o modelo HTML correspondente forma o componente raiz para nosso aplicativo e esse componente raiz pode conter componentes para baixo em uma hierarquia e podem incluir componentes na hierarquia.
+
+Assim, você pode ter vários componentes sendo incluído em seu componente raiz e esses componentes, por sua vez, podem usar outros componentes que estão incluídos dentro deles.Portanto, essa hierarquia de componentes é o que permite projetar a tela do seu aplicativo.
+
+## Componentes Angulares Parte 1
+
+Adicionando um componente de menu
+
+ use o comando ng generate da CLI para gerar um novo componente chamado menu da seguinte forma:
+
+ng generate component menu
+
+Isso criará os arquivos necessários para o componente de menu em uma pasta chamada menu e também importará esse componente para app.module.ts .
+
+Em seguida, abra o arquivo app.component.html e adicione o seguinte após a barra de ferramentas:
+
+<app-menu></app-menu>
+
+Agora criaremos uma pasta para compartilhar(shared) , e usaremos como se fosse o banco de dados.
+
+Em seguida, crie uma pasta chamada shared na pasta src/app . A esta pasta, adicione um arquivo chamado dish.ts (pratos do restaurante)com o seguinte código:
+
+export class Dish {
+    id: string;
+    name: string;
+    image: string;
+    category: string;
+    featured: boolean;
+    label: string;
+    price: string;
+    description: string;
+}
+
+Atualize menu.component.ts da seguinte forma para adicionar os dados de quatro itens de menu:
+
+import { Dish } from '../shared/dish';
+. . .
+
+export class MenuComponent implements OnInit {
+
+  dishes: Dish[] = [
+    {
+      id: '0',
+      name: 'Uthappizza',
+      image: '/assets/images/uthappizza.png',
+      category: 'mains',
+      featured: true,
+      label: 'Hot',
+      price: '4.99',
+      // tslint:disable-next-line:max-line-length
+      description: 'A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.'
+    },
+    {
+      id: '1',
+      name: 'Zucchipakoda',
+      image: '/assets/images/zucchipakoda.png',
+      category: 'appetizer',
+      featured: false,
+      label: '',
+      price: '1.99',
+      description: 'Deep fried Zucchini coated with mildly spiced Chickpea flour batter accompanied with a sweet-tangy tamarind sauce'
+    },
+    {
+      id: '2',
+      name: 'Vadonut',
+      image: '/assets/images/vadonut.png',
+      category: 'appetizer',
+      featured: false,
+      label: 'New',
+      price: '1.99',
+      description: 'A quintessential ConFusion experience, is it a vada or is it a donut?'
+    },
+    {
+      id: '3',
+      name: 'ElaiCheese Cake',
+      image: '/assets/images/elaicheesecake.png',
+      category: 'dessert',
+      featured: false,
+      label: '',
+      price: '2.99',
+      description: 'A delectable, semi-sweet New York Style Cheese Cake, with Graham cracker crust and spiced with Indian cardamoms'
+    }
+   ];
+. . .
+}
+
+Em seguida, atualize o modelo menu.component.html da seguinte forma:
+
+<div class="container"
+     fxLayout="column"
+     fxLayoutGap="10px">
+
+  <mat-list fxFlex>
+    <mat-list-item *ngFor="let dish of dishes">
+      <img matListAvatar src={{dish.image}} alt={{dish.name}}>
+      <h1 matLine> {{dish.name}} </h1>
+      <p matLine>
+        <span> {{dish.description}} </span>
+      </p>
+    </mat-list-item>
+  </mat-list>
+
+</div>
+
+Em seguida, abra app.module.ts e atualize-o da seguinte forma:
+
+
+import { MatListModule } from '@angular/material/list';
+
+. . .
+
+  imports: [
+    . . .,
+    MatListModule,
+    . . .
+  ],
+
+. . .
+
+
+Adicione a seguinte classe CSS ao arquivo styles.scss:
+
+.container {
+    margin: 20px;
+    display:flex;
+}
+
+## Diretivas estruturais
+
+As diretivas são marcadores em um elemento DOM (como um atributo) que informam ao Angular para anexar um comportamento especificado a um elemento existente.
+
+As diretivas existem desde o AngularJS; na nova versão são usadas com componentes, principalmente para criar tags personalizadas em uma aplicação Angular. Existem muitas diretivas prontas que podemos usar e também podemos criar nossas próprias diretivas.
+
+Uma diretiva pode ser definida em Angular como uma classe com o decorator @Directive
+
+As diretivas  nos ajudam a permitir dar instruções ao angular sobre como renderizar modelos para o DOM.
+
+
+Um componente é um tipo especial de diretiva que tem seu próprio modelo associado a ele, também temos outros dois tipos diretivas estruturais e atributos.
+
+Algumas diretivas podem mudar completamente a estrutura da saída do template do componente. Essas diretivas podem alterar o layout do DOM adicionando e removendo elementos DOM de visualização. Podemos classificar essas diretivas em estruturais :
+
+NgIf
+NgFor
+NgSwitch, NgSwitchWhen, NgSwitchDefault
+
+O que percebemos ao usar as diretivas estruturais  é que eles nos ajudam a alterar o layout, ajudando a Adicionar, substiruir e remover elementos do DOM. Ou seja você pode usar diretivas estruturais a um elemnto do html, normalmente uma div ou um item de lista no DOM e também para seus filhos.
+Uma das diretivas estruturais mais comuns é a *ngIf. Um exemplo se aplicar a diretiva *ngIf:
+<div *ngIf="selectedDish">...</div>
+Se o selectDish não for nulo, então este div será adicionado ao DOM.Se for nulo esse selectDish não será adicionado ao DOM então vocâ literalmente removendo do DOM se o valor for falso.
+
+NgFor
+<mat-list-item *ngFor=let dish of dishes></mat-lis>
+Isso nos permite iterar sobre a matriz de pratos(dishes)
+
+Outras diretivas podem simplesmente alterar a aparência dos itens gerados pelo modelo. Vamos chamar essas diretivas não estruturais :
+
+NgSwitch
+Permite que adicione seletivamente certos elementos ao DOM especificando uma condição, dependendo do que a condição for avaliada.
+
+NgClass
+NgStyle
+NgControlName
+NgModel
+
+
+
+## Diretiva ngFor
+
+Esta é uma diretiva para processar cada item de um objeto iterável, gerando uma marcação para cada um. Ela é conhecida como uma diretiva estrutural porque pode alterar o layout do DOM adicionando e removendo elementos DOM de visualização.
+
+Assim, a diretiva ngFor é útil para gerar conteúdo repetido, como uma lista de clientes, elementos de um menu suspenso e assim por diante. Cada item processado do iterável tem variáveis ​​disponíveis em seu contexto de modelo, como mostrado na tabela abaixo:
+
+Variável	Descrição
+  item	 Ex: ngFor="#nome of nomes". Neste caso o item possui a variável nome
+
+- ngFor:  O atributo ngFor me permite iterar sobre uma matriz de objetos.Então, "dish" aqui são uma variedade de objetos de dishes.Então, quando eu digo let dish of dishes ,este dish me dará acesso a cada elemento de minha matriz de dishes e eu itero sobre cada elemento da matriz e então estarei criando este conteúdo para cada um deles.Então, este item de lista vazio,essencialmente atua como um loop for de sua linguagem de computador tradicional e, em seguida, itera sobrea  lista de dishes(pratos) e, em seguida, apresenta cada um deles na minha tela.
+
+
+
+
+
 ## Referencias
 
 - https://github.com/angular/flex-layout
@@ -111,6 +301,8 @@ Uma das principais vantagens do uso de componentes é criar trechos de códigos 
 - https://www.netguru.com/blog/imperative-vs-declarative
 - https://hackernoon.com/5-best-javascript-frameworks-in-2017-7a63b3870282#.tt1k09l1d
 - http://codenugget.co/2015/03/05/declarative-vs-imperative-programming-web.html
+- https://github.com/angular/flex-layout/wiki/Using-Angular-CLI
+- https://www.macoratti.net/18/06/ang_diret1.htm
 
 
 
