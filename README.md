@@ -97,6 +97,7 @@ Um componente é uma "versão" simplificada de uma diretiva, que basicamente sã
 
 Uma das principais vantagens do uso de componentes é criar trechos de códigos reaproveitáveis de maneira trivial, o que substitui a criação de diretivas com configurações mais complexas.
 
+![image](https://user-images.githubusercontent.com/52088444/186658826-e1395cfe-9adb-4108-b385-a1d883bad2a7.png)
 
 ## Referencias
 
