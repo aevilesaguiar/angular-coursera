@@ -1,0 +1,99 @@
+<!--
+
+
+-->
+
+<div class="container"
+    fxLayout="row"
+    fxLayout.sm="column"
+    fxLayout.xs="column"
+    fxLayoutAlign.gt-md="space-around center"
+    fxLayoutGap="10px"
+    fxLayoutGap.xs="0">
+
+  <div fxFlex="40">
+    <div fxFlex *ngIf="selectedDish">
+
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>
+            <h2>{{ selectedDish.name | uppercase }}</h2>
+          </mat-card-title>
+
+        </mat-card-header>
+        <img mat-card-image src="{{ selectedDish.image}}"  alt="{{selectedDish.name}}">
+        <mat-card-content>
+            <p>{{selectedDish.description}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+
+      </mat-card>
+
+
+
+    </div>
+  </div>
+
+  <div fxFlex="40">
+
+    <h2>{{name }}</h2>
+    <br>
+    <br>
+    <br>
+
+    <div *ngFor="let dish of dishes.comments">
+      <p>
+       {{dish.comment}}
+       <br>
+    <span *ngIf="dish.rating">{{ dish.rating }} star</span><br>
+    <span>...{{ dish.author }}   </span>  <span> {{dish.date}}</span>  <br><br></p>
+    </div>
+
+ <!--
+
+    <div fxFlex *ngIf="selectedDish">
+      <mat-list>
+        <mat-list-item *ngFor="let dish of dishes">
+           <h4>{{dish}}</h4>
+           <h4>{{dish}}</h4>
+           <p matLine class="demo-2"> {{dish}} </p>
+           <p matLine class="demo-2"> {{dish}} </p>
+      </mat-list-item>
+        <mat-divider></mat-divider>
+        <h3 matSubheader>Notes</h3>
+        <mat-list-item *ngFor="let note of notes">
+           <mat-icon matListIcon>note</mat-icon>
+           <h4 matLine>{{note.name}}</h4>
+           <p matLine class="demo-2"> {{note.updated}} </p>
+        </mat-list-item>-->
+
+<!--
+  <div fxFlex *ngIf="selectedDish">
+
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          <h3>{{ selectedDish.name | uppercase }}</h3>
+        </mat-card-title>
+
+      </mat-card-header>
+      <img mat-card-image src="{{ selectedDish.image}}"  alt="{{selectedDish.name}}">
+      <mat-card-content>
+          <p>{{selectedDish.description}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+
+    </mat-card>
+
+
+
+  </div>
+
+</div>
+-->
