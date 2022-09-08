@@ -286,7 +286,19 @@ Variável	Descrição
 - ngFor:  O atributo ngFor me permite iterar sobre uma matriz de objetos.Então, "dish" aqui são uma variedade de objetos de dishes.Então, quando eu digo let dish of dishes ,este dish me dará acesso a cada elemento de minha matriz de dishes e eu itero sobre cada elemento da matriz e então estarei criando este conteúdo para cada um deles.Então, este item de lista vazio,essencialmente atua como um loop for de sua linguagem de computador tradicional e, em seguida, itera sobrea  lista de dishes(pratos) e, em seguida, apresenta cada um deles na minha tela.
 
 
+## Data Binding
 
+Mecanismo para coordenar o fluxo de informação entre o model e o componente. Ou entre o DOM e o component.
+
+- Template -> DOM
+- cOMPONENT -> pROPERTY
+
+No nível do componente, é algum tipo de propriedade ou um método que precisa ser fornecido ao modelo ou invocado do DOM. 
+Ou no lado do modelo, pode ser alguma informação que é exigido pelo modelo para ser renderizado no DOM ou mesmo do DOM capturado e enviado de volta ao seu componente.
+
+Então, tudo isso requer que os dados fluam do componente parao modelo ou eventos que são coletados do DOM oupara ser enviado de volta ao seu componente para que ele atue sobre esses eventos.Isso pode ser manipulado no framework angular usando quatro diferentes tipos de fluxo de informações que resumiremos.
+
+Interação entre o component e o template:
 
 
 ## Referencias
